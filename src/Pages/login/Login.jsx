@@ -52,7 +52,19 @@ const Login = () => {
         }
       });
       navigate(from,{replace: true})
-    });
+    })
+    .catch(error => {
+      Swal.fire({
+        title: "wrong email or password",
+        text: "You won't be able to log in try again",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+      })
+      console.log(error);
+    })
+    ;
   };
   const handleValidateCaptcha = (e) => {
     const captcha_value = e.target.value;

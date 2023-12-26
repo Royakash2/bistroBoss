@@ -10,7 +10,7 @@ import slide5 from '../../../assets/home/slide5.jpg'
 import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Category = () => {
-  return <section>
+  return <section data-aos="zoom-out-down">
     <SectionTitle subHeading={"From 11:00am to 10:00pm"}
     heading={"Order Online"}
     />

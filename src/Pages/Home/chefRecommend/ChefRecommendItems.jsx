@@ -13,7 +13,7 @@ const ChefRecommendItems = () => {
         })
     },[])
   return (
-    <section>
+    <section data-aos="zoom-out-left">
       <SectionTitle
         heading="Chef Recommends"
         subHeading="Should Try"

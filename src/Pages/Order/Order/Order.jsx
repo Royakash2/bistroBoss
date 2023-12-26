@@ -30,15 +30,15 @@ const Order = () => {
         title={"Order Food"}
         description={"Would you like to try a dish"}
       ></Cover>
-      <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-        <TabList>
+      <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)} className="text-center mt-6 mb-6">
+        <TabList className="font-bold text-orange-500">
           <Tab>Salad</Tab>
           <Tab>Pizza</Tab>
           <Tab>Soup</Tab>
           <Tab>Desserts</Tab>
           <Tab>Drinks</Tab>
         </TabList>
-        <TabPanel>
+        <TabPanel className="mt-10">
           <OrderTab items={salad}></OrderTab>
         </TabPanel>
         <TabPanel>

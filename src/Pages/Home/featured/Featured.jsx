@@ -10,7 +10,9 @@ const Featured = () => {
         subHeading="Check it out"
       ></SectionTitle>
       <div className="md:flex justify-center items-center pb-20 pt-12 px-36">
-        <div>
+        <div data-aos="fade-up"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
           <img src={featureImg} alt="" />
         </div>
         <div className="md:ml-10">

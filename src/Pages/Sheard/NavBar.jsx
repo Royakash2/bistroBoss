@@ -1,10 +1,14 @@
 import { useContext } from "react";
 import { AuthConText } from "../../provider/Authprovider";
 import { Link } from "react-router-dom";
-import LogOutBtn from "../../components/Button/logOutBtn";
+
+import { GiShoppingCart } from "react-icons/gi";
+import useCart from "../../hooks/useCart";
+import LogOutBtn from "../../components/Button/LogOutBtn";
 
 const NavBar = () => {
   const { user, logOut } = useContext(AuthConText);
+  const [cart] = useCart();
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -24,7 +28,14 @@ const NavBar = () => {
       <li>
         <Link to="/secret">secret</Link>
       </li>
-      
+      <li>
+        <Link to="/dashboard/myCart">
+          <div className="flex justify-center items-center">
+            <GiShoppingCart className="w-11 h-6" />
+            <span className="badge badge-secondary">+{cart?.length || 0}</span>
+          </div>
+        </Link>
+      </li>
     </>
   );
   return (
@@ -55,27 +66,25 @@ const NavBar = () => {
               {navOptions}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="font-bold text-3xl">
+            Bistro<span className="text-amber-300">BoSS</span>
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-2">{navOptions}</ul>
+          <ul className="menu-horizontal justify-center items-center gap-10">
+            {navOptions}
+          </ul>
         </div>
         <div className="navbar-end">
-        {user ? (
-        <>
-          
-          <LogOutBtn onClick={handleLogOut}></LogOutBtn>
-
-
-
-        </>
-      ) : (
-        <>
-          <li>
-            <Link to="/login">Log In</Link>
-          </li>
-        </>
-      )}
+          {user ? (
+            <>
+              <LogOutBtn onClick={handleLogOut}></LogOutBtn>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className="font-bold uppercase">Log In</Link>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -10,6 +10,9 @@ import SignUp from "../Pages/signUp/SignUp";
 import Main from "../Layout/Main";
 import PrivateRoute from "./PrivateRoute";
 import Secret from "../Pages/Sheard/Secret";
+import Dashboard from "../Layout/Dashboard";
+import MyCart from "../Pages/Dashboard/MyCart";
+import Wallet from "../Pages/Dashboard/Wallet";
 
  export const router = createBrowserRouter([
     {
@@ -42,4 +45,19 @@ import Secret from "../Pages/Sheard/Secret";
         }
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'myCart',
+          element:<MyCart></MyCart>
+        },
+        {
+          path:'wallet',
+          element:<Wallet></Wallet>
+        },
+        
+      ]
+    }
   ]);
