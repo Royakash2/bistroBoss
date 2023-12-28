@@ -47,7 +47,7 @@ import Wallet from "../Pages/Dashboard/Wallet";
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path:'myCart',
